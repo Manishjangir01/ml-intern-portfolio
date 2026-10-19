@@ -1,0 +1,32 @@
+{
+  "best_model": "logreg",
+  "n_rows": 1200,
+  "test_rows": 240,
+  "churn_rate": 0.365,
+  "metrics": {
+    "logreg": {
+      "accuracy": 0.7,
+      "precision": 0.5741,
+      "recall": 0.7045,
+      "f1": 0.6327,
+      "roc_auc": 0.7882
+    },
+    "random_forest": {
+      "accuracy": 0.7208,
+      "precision": 0.6019,
+      "recall": 0.7045,
+      "f1": 0.6492,
+      "roc_auc": 0.771
+    }
+  },
+  "cv_roc_auc": {
+    "logreg": {
+      "mean": 0.7991,
+      "std": 0.0221
+    },
+    "random_forest": {
+      "mean": 0.7714,
+      "std": 0.0246
+    }
+  }
+}
