@@ -7,6 +7,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+# Project root (two levels above src/ml_intern), so paths work from any directory.
+ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DATA_PATH = ROOT / "data" / "raw" / "churn.csv"
+
 FEATURE_COLUMNS = [
     "tenure_months",
     "monthly_charges",
@@ -53,7 +57,7 @@ def generate_churn_data(n_samples: int = 1200, random_state: int = 42) -> pd.Dat
 
 def load_or_create(path: Path | None = None, **kwargs) -> pd.DataFrame:
     if path is None:
-        path = Path("data/raw/churn.csv")
+        path = DEFAULT_DATA_PATH
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
         return pd.read_csv(path)
